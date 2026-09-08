@@ -1,0 +1,11 @@
+Write a YouTube Short script on: "3 surprising facts about Docker"
+
+Target length: ~60 seconds of spoken narration (~150 words).
+
+Return ONLY valid JSON, no markdown fences, in this exact shape:
+{
+  "title": "short punchy video title, under 70 characters",
+  "narration": "the full spoken script as one string, natural spoken pacing, no stage directions",
+  "captions": ["caption chunk 1", "caption chunk 2", "..."]
+}
+Split narration into captions of roughly 6-10 words each, in order, covering the full narration.

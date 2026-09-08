@@ -1,0 +1,20 @@
+{
+  "title": "3 Docker Facts That Will Blow Your Mind",
+  "narration": "Docker fact one: containers don't run a full operating system. They share your computer's kernel, which is why they start in milliseconds instead of minutes like a virtual machine. Fact two: when you stop a container, Docker doesn't kill it instantly. It sends a polite shutdown signal, waits ten seconds, then force kills it if needed. That's why apps that ignore this signal cause messy production deploys. Fact three: every line in a Dockerfile creates a cached layer, and changing even one character breaks the cache for that line and everything after it. That's why smart Dockerfiles put stable stuff, like installing dependencies, near the top, and put your changing code near the bottom. Small ordering choices, huge build time savings. Which one surprised you most? Drop it in the comments.",
+  "captions": [
+    "Docker fact one: containers don't run a full operating system.",
+    "They share your computer's kernel, which is why they start",
+    "in milliseconds instead of minutes like a virtual machine.",
+    "Fact two: when you stop a container, Docker doesn't",
+    "kill it instantly. It sends a polite shutdown signal,",
+    "waits ten seconds, then force kills it if needed.",
+    "That's why apps that ignore this signal cause messy",
+    "production deploys. Fact three: every line in a Dockerfile",
+    "creates a cached layer, and changing even one character",
+    "breaks the cache for that line and everything after it.",
+    "That's why smart Dockerfiles put stable stuff, like installing dependencies,",
+    "near the top, and put your changing code near the bottom.",
+    "Small ordering choices, huge build time savings.",
+    "Which one surprised you most? Drop it in the comments."
+  ]
+}
