@@ -12,7 +12,7 @@ from assemble import assemble_video
 from upload import upload_video
 
 
-def run_pipeline(topic: str, background_image: str = "background.jpg",
+def run_pipeline(topic: str, clips_folder: str = "clips",
                   publish: bool = False):
     print(f"1/4 Generating script for: {topic}")
     result = generate_script(topic)
@@ -24,7 +24,7 @@ def run_pipeline(topic: str, background_image: str = "background.jpg",
     print("3/4 Assembling video")
     video_path = assemble_video(
         audio_path=audio_path,
-        background_path=background_image,
+        clips_folder=clips_folder,
         captions=result["captions"],
         output_path="final_video.mp4",
     )
@@ -44,5 +44,14 @@ def run_pipeline(topic: str, background_image: str = "background.jpg",
 
 
 if __name__ == "__main__":
-    topic = sys.argv[1] if len(sys.argv) > 1 else "3 surprising facts about Docker"
-    run_pipeline(topic, publish=False)
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run the full YouTube automation pipeline.")
+    parser.add_argument("topic", nargs="?", default="3 surprising facts about Docker",
+                         help="Video topic (must match what you used in script_input.json)")
+    parser.add_argument("--clips-folder", default="clips", help="Folder of stock video clips")
+    parser.add_argument("--publish", action="store_true",
+                         help="Upload to YouTube as private after assembling (default: off)")
+    args = parser.parse_args()
+
+    run_pipeline(args.topic, clips_folder=args.clips_folder, publish=args.publish)
