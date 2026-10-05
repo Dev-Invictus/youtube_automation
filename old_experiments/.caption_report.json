@@ -1,0 +1,9 @@
+{
+  "estimated": false,
+  "model": "edge-tts word boundaries",
+  "anchored": 1.0,
+  "mean_word_confidence": null,
+  "cues": 191,
+  "audio_seconds": 587.376,
+  "resegmented": true
+}

@@ -1,0 +1,10 @@
+{
+  "topic": "भगवान जगन्नाथ कौन हैं? सरल भाषा में",
+  "script": "script_jagannath.json",
+  "broll": "jagannath",
+  "language": "hi",
+  "publish": false,
+  "clips_folder": "clips/generated",
+  "whisper_model": "small",
+  "privacy_status": "private"
+}
